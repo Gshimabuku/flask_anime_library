@@ -1,13 +1,13 @@
-"""
-Main Application: Router for Books Library
-"""
+from flask import Flask, render_template
 
-import streamlit as st
+app = Flask(__name__)
+app.config.from_object('config.Config')
 
-# =========================
-# メインアプリケーション
-# =========================
-def main():
 
-if __name__ == "__main__":
-    main()
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+
+if __name__ == '__main__':
+    app.run(debug=True)
